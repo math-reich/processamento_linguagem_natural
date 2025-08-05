@@ -1,30 +1,35 @@
 # matheus, this  hehe
 
-def compare_words(base, word, ngram = 2):
-   words = [base, word]
-   for w in words:
-      for gram in w:
-         print("oi")
+class WordData:
+  def __init__(self, original_word, ngrams):
+    self.base_word = original_word
+    self.pairs = ['abacate', 'abacaxi', 'abobora', 'abobrinha', 
+                  'ananás', 'maça', 'mamão', 'manga', 'melancia', 
+                  'melão', 'mexerica', 'morango']
+    self.ngrams = ngrams
 
-base_of_words = ['abacate', 'abacaxi', 'abobora', 'abobrinha', 'ananás', 'maça', 'mamão', 'manga', 'melancia', 'melão', 'mexerica', 'morango']
+def compare_words(base, word, ngram = 2):
+  words = [base, word]
+  for w in words:
+    for gram in w:
+      print("oi")
+
+base_of_words = 
 separated_words = []
 ngrams = 2
 
+# function to separate array of words
 for word in base_of_words:
-   for index, char in enumerate(word):
+    separ_word = []
+    for index, char in enumerate(word):
       if(index + 1 < len(word)):
-         separated_words.append(word[index] + word[index + 1])
+         separ_word.append(word[index] + word[index + 1])
+    separated_words.append(separ_word)
 
+# function to print array of words
 print(list(separated_words))
 
-def teste():
-   ## TESTE de logica
-   teste = 'abacate'
-   teste_separado = []
+# function to calculate the distance
+# grams em comum * 2  / (grams unicos pal1 + grams unicos pal2)
 
-   # correct way to separate the word
-   # like this 'ab' 'ba' 'ac' 'ca' 'at' 'te'
-   for index, c in enumerate(teste):
-      if(index + 1 < len(teste)):
-         teste_separado.append(teste[index] + teste[index + 1])
-
+# need to handle utf8 or ASCII
